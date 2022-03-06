@@ -2,7 +2,9 @@ import type { NextPage } from "next"
 import Default from "../layouts/default"
 
 const Home: NextPage = () => {
-	return <div className="h-screen w-screen"></div>
+	return <div className="h-screen w-screen">
+
+	</div>
 }
 
 export default Home

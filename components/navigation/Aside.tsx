@@ -28,11 +28,15 @@ const Aside = (props: Props) => {
 		<>
 			<aside
 				ref={asideRef}
-				className={`${props.className} fixed left-0 top-0 z-10 flex h-screen w-36`}
+				className={`${props.className} fixed left-0 top-0 z-10 flex h-screen w-36 flex-col items-center justify-between`}
 			>
+				<span className="py-8 text-white font-extrabold">Starstruck</span>
 				<button onClick={toggleNavigation}>
 					<Hamburger navState={state} />
 				</button>
+				<span className="origin-left translate-x-1/2 -rotate-90 whitespace-nowrap px-8 text-white">
+					Agence Créative
+				</span>
 			</aside>
 		</>
 	)
