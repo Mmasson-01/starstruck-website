@@ -5,18 +5,18 @@ const useCanvas = (draw: Function, options: any = {}) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
 	const particles: Particle[] = []
 
-	const handleMouseMove = (e: MouseEvent) => {
-		particles.forEach((particle) => {
-			// particle.update(e.clientX, e.clientY)
-		})
-	}
+	// const handleMouseMove = (e: MouseEvent) => {
+	// 	particles.forEach((particle) => {
+	// 		// particle.update(e.clientX, e.clientY)
+	// 	})
+	// }
 
-	useEffect(() => {
-		window.addEventListener("mousemove", handleMouseMove)
-		return () => {
-			window.removeEventListener("mousemove", handleMouseMove)
-		}
-	}, [])
+	// useEffect(() => {
+	// 	window.addEventListener("mousemove", handleMouseMove)
+	// 	return () => {
+	// 		window.removeEventListener("mousemove", handleMouseMove)
+	// 	}
+	// }, [])
 
 	useEffect(() => {
 		const canvas = canvasRef.current

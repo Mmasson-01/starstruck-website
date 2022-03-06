@@ -53,8 +53,8 @@ const Canvas = (props: Props) => {
 	const { draw, options, ...rest } = props
 	const { context, postDraw = _postDraw, preDraw = _preDraw } = options
 	const canvasRef = useCanvas(draw, { context, postDraw, preDraw })
-
 	return <canvas className={`${props.className}`} ref={canvasRef} {...rest} />
+
 }
 
 export default Canvas
