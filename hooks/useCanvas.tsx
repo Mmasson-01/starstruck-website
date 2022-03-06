@@ -1,22 +1,22 @@
 import { useEffect, useRef } from "react"
+import Particle from "../components/animations/Particle"
 
 const useCanvas = (draw: Function, options: any = {}) => {
 	const canvasRef = useRef<HTMLCanvasElement>(null)
+	const particles: Particle[] = []
 
-	// rewrite the resize canvas function to take into account the device pixel ratio.
-	const resizeCanvas = (canvas: HTMLCanvasElement) => {
-		const { width, height } = canvas.getBoundingClientRect()
-		if (canvas.width !== width || canvas.height !== height) {
-			const { devicePixelRatio: ratio = 1 } = window
-			const context = canvas.getContext("2d")
-			canvas.width = width * ratio
-			canvas.height = height * ratio
-			context?.scale(ratio, ratio)
-
-			return true
-		}
-		return false
+	const handleMouseMove = (e: MouseEvent) => {
+		particles.forEach((particle) => {
+			// particle.update(e.clientX, e.clientY)
+		})
 	}
+
+	useEffect(() => {
+		window.addEventListener("mousemove", handleMouseMove)
+		return () => {
+			window.removeEventListener("mousemove", handleMouseMove)
+		}
+	}, [])
 
 	useEffect(() => {
 		const canvas = canvasRef.current
@@ -26,12 +26,27 @@ const useCanvas = (draw: Function, options: any = {}) => {
 		let animationFrameId: number
 
 		const render = () => {
+			options.preDraw(context, canvas)
 			frameCount++
-			draw(context, frameCount)
+			draw(context, frameCount, particles)
 			animationFrameId = window.requestAnimationFrame(render)
+			options.postDraw(context)
 		}
 
 		render()
+
+		if (particles.length === 0) {
+			for (let i = 0; i < 300; i++) {
+				let circle = new Particle(
+					Math.random() * canvas.width,
+					Math.random() * canvas.height,
+					5,
+					"rgba(255,255,255,0.4)",
+					0.2
+				)
+				particles.push(circle)
+			}
+		}
 
 		return () => {
 			window.cancelAnimationFrame(animationFrameId)
