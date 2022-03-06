@@ -1,6 +1,7 @@
 import type { NextPage } from "next"
 import Canvas from "../components/animations/Canvas"
 import Particle from "../components/animations/Particle"
+import Default from "../layouts/default"
 
 const Home: NextPage = () => {
 	const draw = (
@@ -13,16 +14,18 @@ const Home: NextPage = () => {
 			particle.draw(ctx)
 			particle.update()
 		})
-
-		// ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-		// ctx.fillStyle = "#000"
-		// ctx.beginPath()
-		// ctx.arc(50, 100, 20 * Math.sin(frameCount * 0.05) ** 2, 0, 2 * Math.PI)
-		// ctx.closePath()
-		// ctx.fill()
 	}
 
-	return <Canvas draw={draw} options={{}} />
+	// return <Canvas draw={draw} options={{}} />
+	return <div></div>
 }
 
 export default Home
+
+Home.getLayout = (page) => {
+	return (
+		<Default>
+			{page}
+		</Default>
+	)
+}

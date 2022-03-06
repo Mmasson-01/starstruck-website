@@ -8,7 +8,6 @@ class Particle {
 	r: number
 	color: string
 	multiplier: number
-	reset: boolean = false
 	renderCount: number = 0
 	directionX: number
 	directionY: number
@@ -26,7 +25,6 @@ class Particle {
 		this.r = Math.floor(Math.random() * r)
 		this.color = color
 		this.multiplier = multiplier
-		this.reset = false
 		this.directionX = Math.random() < 0.5 ? -1 : 1
 		this.directionY = Math.random() < 0.5 ? -1 : 1
 	}

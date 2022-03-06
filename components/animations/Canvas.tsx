@@ -4,6 +4,7 @@ import useCanvas from "../../hooks/useCanvas"
 type Props = {
 	draw: Function
 	options: any
+	className?: string
 }
 
 function resizeCanvasToDisplaySize(canvas: HTMLCanvasElement) {
@@ -53,7 +54,7 @@ const Canvas = (props: Props) => {
 	const { context, postDraw = _postDraw, preDraw = _preDraw } = options
 	const canvasRef = useCanvas(draw, { context, postDraw, preDraw })
 
-	return <canvas className="w-screen h-screen bg-blue-900" ref={canvasRef} {...rest} />
+	return <canvas className={`${props.className}`} ref={canvasRef} {...rest} />
 }
 
 export default Canvas

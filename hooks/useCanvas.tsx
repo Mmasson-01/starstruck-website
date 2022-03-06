@@ -20,7 +20,7 @@ const useCanvas = (draw: Function, options: any = {}) => {
 
 	useEffect(() => {
 		const canvas = canvasRef.current
-		const context = canvas.getContext(options.context || "2d")
+		const context = canvas?.getContext(options.context || "2d")
 
 		let frameCount = 0
 		let animationFrameId: number
@@ -35,7 +35,7 @@ const useCanvas = (draw: Function, options: any = {}) => {
 
 		render()
 
-		if (particles.length === 0) {
+		if (particles.length === 0 && canvas) {
 			for (let i = 0; i < 300; i++) {
 				let circle = new Particle(
 					Math.random() * canvas.width,
