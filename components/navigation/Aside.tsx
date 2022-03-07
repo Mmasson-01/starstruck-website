@@ -28,9 +28,11 @@ const Aside = (props: Props) => {
 		<>
 			<aside
 				ref={asideRef}
-				className={`${props.className} fixed left-0 top-0 z-10 flex h-screen w-36 flex-col items-center justify-between`}
+				className={`${props.className} fixed left-0 top-0 z-20 flex h-screen w-36 flex-col items-center justify-between`}
 			>
-				<span className="py-8 text-white font-extrabold">Starstruck</span>
+				<span className="py-12 text-xl font-extrabold text-white">
+					Starstruck
+				</span>
 				<button onClick={toggleNavigation}>
 					<Hamburger navState={state} />
 				</button>

@@ -8,18 +8,15 @@ type Props = {
 }
 
 const Default = (props: Props) => {
-
 	return (
 		<>
 			<SideNavigationProvider>
 				<>
-					<Aside/>
-					<SideNavigation
-						className={`-translate-x-full`}
-					/>
+					<Aside />
+					<SideNavigation className={`-translate-x-full`} />
 				</>
 			</SideNavigationProvider>
-			<main className="bg-black font-body">{props.children}</main>
+			<main className="font-body">{props.children}</main>
 		</>
 	)
 }

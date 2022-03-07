@@ -71,7 +71,7 @@ const SideNavigation = (props: Props) => {
 			}}
 		>
 			<div
-				className={`${props.className} absolute left-0 top-0 flex h-screen w-screen`}
+				className={`${props.className} absolute left-0 top-0 z-10 flex h-screen w-screen`}
 			>
 				<aside
 					ref={asideRef}
