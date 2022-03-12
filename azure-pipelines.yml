@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  name: Starstruck Self Hosted
+  name: 'Starstruck Self Hosted'
   vmImage: ubuntu-latest
 
 steps:
