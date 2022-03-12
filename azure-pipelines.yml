@@ -7,7 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: Starstruck Self Hosted
+  name: Starstruck Self Hosted
+  vmImage: ubuntu-latest
 
 steps:
 - task: NodeTool@0
