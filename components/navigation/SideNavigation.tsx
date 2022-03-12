@@ -80,22 +80,22 @@ const SideNavigation = (props: Props) => {
 				<div className="relative flex h-screen w-full flex-col justify-center">
 					<nav className="relative flex py-24 pl-24 before:absolute before:top-0 before:-left-[2px] before:z-10 before:h-full before:w-1 before:bg-blue-900 before:content-['']">
 						<ul className="flex flex-col space-y-12 text-6xl font-extrabold leading-none text-white">
-							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-300  ease-in hover:skew-x-6 hover:text-black">
+							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-200 hover:text-black">
 								<span className="item w-fit whitespace-nowrap">
 									Qui sommes-nous?
 								</span>
 							</li>
-							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-300  ease-in hover:skew-x-6 hover:text-black">
+							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-200 hover:text-black">
 								<span className="item w-fit whitespace-nowrap">
 									Solutions
 								</span>
 							</li>
-							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-300  ease-in hover:skew-x-6 hover:text-black">
+							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-200 hover:text-black">
 								<span className="item w-fit whitespace-nowrap">
 									Réalisations
 								</span>
 							</li>
-							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-300  ease-in hover:skew-x-6 hover:text-black">
+							<li className="group relative flex h-16 w-full cursor-pointer overflow-hidden transition-all duration-200 hover:text-black">
 								<span className="item w-fit whitespace-nowrap">
 									Contactez-nous
 								</span>

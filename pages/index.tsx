@@ -17,8 +17,8 @@ const Home: NextPage = () => {
 				</button>
 			</header>
 			<section className="flex h-screen w-screen items-center bg-black pl-60 pr-24">
-				<div className="w-[500px] font-bold text-white">
-					<h1 className="mb-12 text-6xl">
+				<div className="w-[500px] text-white">
+					<h1 className="mb-12 text-6xl font-extrabold">
 						Propulsez votre entreprise à un autre niveau
 					</h1>
 					<p>
